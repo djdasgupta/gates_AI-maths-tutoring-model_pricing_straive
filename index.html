@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEO Briefing — Three-Year Engagement — Delivery Model &amp; Commercial Construct</title>
+<style>
+  :root {
+    --navy: #1F3864;
+    --navy-dark: #14274A;
+    --gold: #BF8F00;
+    --ink: #1A1A1A;
+    --grey: #5B5B5B;
+    --line: #D9D9D9;
+    --bg-light: #F4F4F4;
+    --bg-page: #FAFAF9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    background: var(--bg-page);
+    display: flex;
+    min-height: 100vh;
+  }
+  .sans { font-family: Arial, Helvetica, sans-serif; }
+
+  /* ---------- Sidebar ---------- */
+  nav {
+    width: 260px;
+    flex-shrink: 0;
+    background: var(--navy);
+    color: #EDEFF3;
+    padding: 32px 0 32px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  nav .brand {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    padding: 0 28px;
+    margin-bottom: 6px;
+  }
+  nav .brand-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 28px;
+    margin-bottom: 30px;
+    line-height: 1.35;
+    color: #FFFFFF;
+  }
+  nav ul { list-style: none; margin: 0; padding: 0; }
+  nav li { border-left: 3px solid transparent; }
+  nav button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #C9CFDC;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 13px 28px;
+    cursor: pointer;
+    line-height: 1.4;
+  }
+  nav li.active { border-left-color: var(--gold); background: rgba(255,255,255,0.06); }
+  nav li.active button { color: #FFFFFF; font-weight: 700; }
+  nav button:hover { color: #FFFFFF; }
+  nav .num {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    margin-right: 8px;
+  }
+  nav .footnote {
+    padding: 20px 28px 0 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #8B93A9;
+    line-height: 1.5;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    margin-top: 20px;
+  }
+
+  /* ---------- Main content ---------- */
+  main {
+    flex: 1;
+    max-width: 900px;
+    padding: 48px 64px 80px 64px;
+  }
+  .section { display: none; }
+  .section.active { display: block; animation: none; }
+
+  .eyebrow {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  h1.page-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 10px 0;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: var(--grey);
+    font-style: italic;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+  }
+  h2.sec-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 8px;
+    margin: 0 0 18px 0;
+  }
+  h3.sub-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 26px 0 10px 0;
+  }
+  p { font-size: 15px; line-height: 1.65; margin: 0 0 14px 0; }
+  ul.formal { margin: 0 0 14px 0; padding-left: 22px; }
+  ul.formal li { font-size: 15px; line-height: 1.65; margin-bottom: 8px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  th {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--navy);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  td {
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  tr:nth-child(even) td { background: var(--bg-light); }
+  td.center { text-align: center; }
+  td.strong { font-weight: 700; }
+  td.gold { color: var(--gold); font-weight: 700; }
+  td.navy { color: var(--navy); font-weight: 700; }
+
+  .table-note {
+    font-size: 12.5px;
+    color: var(--grey);
+    font-style: italic;
+    margin: 6px 0 24px 0;
+  }
+
+  .callout {
+    background: #FBF3E0;
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin: 18px 0 24px 0;
+  }
+  .callout.blue { background: #EAF1FA; border-left-color: var(--navy); }
+  .callout .callout-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .callout p { margin: 0; }
+
+  /* ---------- Bar chart ---------- */
+  .bar-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .bar-row:first-child { border-top: 1px solid var(--line); }
+  .bar-year {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--navy);
+    width: 62px;
+    flex-shrink: 0;
+  }
+  .bar-fte {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--gold);
+    width: 44px;
+    flex-shrink: 0;
+  }
+  .bar-track {
+    flex: 1;
+    background: #E9E9E7;
+    height: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-right: 16px;
+  }
+  .bar-fill { height: 100%; background: var(--navy); }
+  .bar-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+    width: 220px;
+    flex-shrink: 0;
+  }
+
+  /* ---------- Prev/Next ---------- */
+  .pager {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .pager button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background: none;
+    border: 1px solid var(--navy);
+    color: var(--navy);
+    padding: 9px 18px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .pager button:hover { background: var(--navy); color: #FFFFFF; }
+  .pager button:disabled { opacity: 0.35; cursor: default; }
+  .pager button:disabled:hover { background: none; color: var(--navy); }
+
+  @media (max-width: 860px) {
+    body { flex-direction: column; }
+    nav { position: relative; width: 100%; height: auto; }
+    main { padding: 32px 24px 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">THREE-YEAR ENGAGEMENT</div>
+  <div class="brand-title">CEO Briefing<br>Delivery Model &amp; Commercial Construct</div>
+  <ul id="navList">
+    <li data-target="s0" class="active"><button><span class="num">00</span>Overview</button></li>
+    <li data-target="s1"><button><span class="num">01</span>Three-Year Journey</button></li>
+    <li data-target="s2"><button><span class="num">02</span>Role Profiles &amp; Location</button></li>
+    <li data-target="s3"><button><span class="num">03</span>Pricing Construct</button></li>
+    <li data-target="s4"><button><span class="num">04</span>Summary</button></li>
+  </ul>
+  <div class="footnote">Confidential — prepared for internal executive review. Figures rounded for presentation purposes.</div>
+</nav>
+
+<main>
+
+  <!-- ===================== SECTION 0 — OVERVIEW ===================== -->
+  <section class="section active" id="s0">
+    <div class="eyebrow">THREE-YEAR ENGAGEMENT</div>
+    <h1 class="page-title">CEO Briefing: Delivery Model &amp; Commercial Construct</h1>
+    <div class="subtitle">A three-year phased engagement structured around a build, integration, and steady-state operation sequence.</div>
+
+    <p>This briefing summarizes the delivery structure, staffing model, and commercial construct for the proposed three-year engagement. It is organized into three sections, accessible from the navigation panel: the phased delivery structure, the role and location strategy, and the pricing construct.</p>
+
+    <h3 class="sub-title">Summary of Key Figures</h3>
+    <table>
+      <tr><th style="width:40%">Metric</th><th>Value</th></tr>
+      <tr><td>Total engagement duration</td><td>3 years</td></tr>
+      <tr><td>Total effort</td><td>Approximately 203 person-months</td></tr>
+      <tr><td>Total investment</td><td>Approximately $1.23M</td></tr>
+      <tr><td>Peak year</td><td>Year 2, approximately $570K</td></tr>
+      <tr><td>Gross margin position</td><td>Fixed at 15% for this engagement</td></tr>
+      <tr><td>Blended delivery rate</td><td>Approximately $38 per hour</td></tr>
+    </table>
+    <div class="table-note">Detail on each figure is provided in the corresponding section.</div>
+
+    <div class="pager">
+      <button disabled>&larr; Previous</button>
+      <button onclick="goTo('s1')">Next: Three-Year Journey &rarr;</button>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <section class="section" id="s1">
+    <h2 class="sec-title">1. The Three-Year Journey at a Glance</h2>
+
+    <p>The engagement is structured across three phases rather than delivered as a uniform effort spread evenly across three years. Resourcing intensity increases through Year 1, reaches its highest point in Year 2, and decreases in Year 3. This structure determines both the delivery plan and the associated cost profile described in Section 3.</p>
+
+    <h3 class="sub-title">Three Phases, One Continuous Delivery</h3>
+    <table>
+      <tr><th style="width:20%">Phase</th><th style="width:14%">Timeframe</th><th>Description</th></tr>
+      <tr>
+        <td class="strong">1 — Foundation &amp; Build</td>
+        <td class="center">Year 1</td>
+        <td>Establish the technical foundation, including data pipelines, the safety framework, and the evaluation harness. This phase requires the highest proportion of senior technical judgment; the team is smaller but weighted toward experienced personnel.</td>
+      </tr>
+      <tr>
+        <td class="strong">2 — Scale &amp; Peak Integration</td>
+        <td class="center">Year 2</td>
+        <td>The period of highest activity. Work established in Year 1 is scaled, integrated, and tested in parallel across data, evaluation, and platform-integration workstreams. Headcount reaches its peak in this phase as a planned outcome of the delivery approach, not as a result of scope change.</td>
+      </tr>
+      <tr>
+        <td class="strong">3 — Steady-State Optimization</td>
+        <td class="center">Year 3</td>
+        <td>The system is in operation. The team reduces to a smaller group focused on refinement, retraining, and operational support.</td>
+      </tr>
+    </table>
+
+    <h3 class="sub-title">Resourcing Intensity by Year</h3>
+    <p>Resourcing follows a single build-peak-taper profile across the three years, rather than a stepped or continuously declining structure. This is the expected profile for an engagement that transitions from initial build to steady-state operation.</p>
+
+    <div class="bar-row">
+      <div class="bar-year">Year 1</div>
+      <div class="bar-fte">~5</div>
+      <div class="bar-track"><div class="bar-fill" style="width:64%"></div></div>
+      <div class="bar-label">Build phase</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-year">Year 2</div>
+      <div class="bar-fte">~8</div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+      <div class="bar-label">Peak — parallel workstreams</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-year">Year 3</div>
+      <div class="bar-fte">~4</div>
+      <div class="bar-track"><div class="bar-fill" style="width:48%"></div></div>
+      <div class="bar-label">Steady-state operation</div>
+    </div>
+    <div class="table-note">Average full-time-equivalent headcount by year, rounded for presentation. Bar length is proportional to headcount.</div>
+
+    <div class="pager">
+      <button onclick="goTo('s0')">&larr; Previous</button>
+      <button onclick="goTo('s2')">Next: Role Profiles &amp; Location &rarr;</button>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <section class="section" id="s2">
+    <h2 class="sec-title">2. Role Profiles &amp; Location Strategy</h2>
+
+    <p>Roles across the engagement are organized into three categories. Each category is assigned to either the United States or India based on the nature of the work, not solely on cost.</p>
+
+    <h3 class="sub-title">Role Categories</h3>
+    <table>
+      <tr><th style="width:22%">Category</th><th style="width:26%">Example Roles</th><th style="width:10%">Location</th><th>Rationale</th></tr>
+      <tr>
+        <td class="strong">Strategic / Architecture Leadership</td>
+        <td>Data Engineering Lead; Evaluation &amp; Safety Lead</td>
+        <td class="center navy">US</td>
+        <td>These roles involve architectural decisions, safety-threshold determinations, and consortium-facing communication. These functions are retained onshore to maintain direct accountability.</td>
+      </tr>
+      <tr>
+        <td class="strong">Core Engineering &amp; Delivery</td>
+        <td>Data Engineers; Evaluation/Safety Engineers; MLOps; Integration</td>
+        <td class="center navy">India</td>
+        <td>Well-specified, tool-supported execution work performed under onshore architectural direction. Offshore delivery provides equivalent quality at a lower cost basis for this category of work.</td>
+      </tr>
+      <tr>
+        <td class="strong">Support, Analysis &amp; Maintenance</td>
+        <td>Annotation &amp; QA; Analyst; Steady-state maintenance</td>
+        <td class="center navy">India</td>
+        <td>Process-driven, high-volume work suited to offshore delivery, maintained under the oversight of the same onshore leads.</td>
+      </tr>
+    </table>
+
+    <h3 class="sub-title">How the Model Balances Risk, Quality, and Cost</h3>
+    <ul class="formal">
+      <li><strong>Risk</strong> is managed by assigning all architectural, safety, and client-facing decisions to senior onshore leads with end-to-end accountability.</li>
+      <li><strong>Quality</strong> is maintained through direct onshore supervision of offshore execution, which follows clearly specified and tool-supported processes rather than independent, unsupervised delivery.</li>
+      <li><strong>Cost efficiency</strong> is achieved by locating high-volume execution roles offshore, reserving onshore capacity for roles that require judgment rather than volume.</li>
+    </ul>
+    <p>In summary: strategic and architectural decisions are retained onshore, while execution and support functions are located offshore. The proportion of offshore effort increases as the engagement transitions from build to operation.</p>
+
+    <div class="pager">
+      <button onclick="goTo('s1')">&larr; Previous</button>
+      <button onclick="goTo('s3')">Next: Pricing Construct &rarr;</button>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <section class="section" id="s3">
+    <h2 class="sec-title">3. Simplified Pricing Construct</h2>
+
+    <div class="callout">
+      <div class="callout-label">PRICING LOGIC — SUMMARY</div>
+      <p>Total price is calculated as the blended hourly rate multiplied by total effort hours. The blended rate reflects a weighted average of onshore leadership hours and offshore execution hours. As the proportion of offshore effort increases in Years 2 and 3, the blended rate — and the corresponding annual cost — decreases accordingly.</p>
+    </div>
+
+    <h3 class="sub-title">Year-by-Year Summary</h3>
+    <table>
+      <tr><th>Year</th><th>Average Team Size (FTE)</th><th>Total Effort</th><th>Investment</th></tr>
+      <tr>
+        <td class="strong">Year 1</td>
+        <td class="center">~5 FTE</td>
+        <td class="center">~62 person-months</td>
+        <td class="center gold">~$390K</td>
+      </tr>
+      <tr>
+        <td class="strong">Year 2 (peak)</td>
+        <td class="center">~8 FTE</td>
+        <td class="center">~96 person-months</td>
+        <td class="center gold">~$570K</td>
+      </tr>
+      <tr>
+        <td class="strong">Year 3</td>
+        <td class="center">~4 FTE</td>
+        <td class="center">~46 person-months</td>
+        <td class="center gold">~$265K</td>
+      </tr>
+      <tr>
+        <td class="strong">3-Year Total</td>
+        <td class="center">—</td>
+        <td class="center strong">~203 person-months</td>
+        <td class="center navy">~$1.23M</td>
+      </tr>
+    </table>
+    <div class="table-note">Figures rounded for presentation. Reflects a blended delivery rate of approximately $38 per hour across the full team mix, and a fixed 15% gross margin for this engagement.</div>
+
+    <h3 class="sub-title">Investment Profile Across the Engagement</h3>
+    <p>Investment follows a single build-peak-taper profile across the three years: it increases through Year 1 as the technical foundation is established, reaches its highest point in Year 2 when all workstreams operate in parallel, and decreases in Year 3 as the engagement transitions to steady-state operation. This profile explains why the Year 3 run-rate is approximately one-third of the Year 2 peak.</p>
+
+    <div class="pager">
+      <button onclick="goTo('s2')">&larr; Previous</button>
+      <button onclick="goTo('s4')">Next: Summary &rarr;</button>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 4 — SUMMARY ===================== -->
+  <section class="section" id="s4">
+    <h2 class="sec-title">4. Summary</h2>
+
+    <div class="callout blue">
+      <div class="callout-label">KEY POINTS FOR REVIEW</div>
+      <p>Total services investment across the three years is approximately $1.23M, with Year 2 representing the highest annual commitment at approximately $570K and Year 3 reducing to approximately $265K. The commercial terms reflect a fixed gross margin of 15% for this specific engagement, consistent with the competitive nature of this opportunity. This margin position applies to this engagement only and should not be treated as a precedent for future pricing.</p>
+    </div>
+
+    <h3 class="sub-title">Summary Points</h3>
+    <ul class="formal">
+      <li>The engagement follows three phases: Foundation &amp; Build (Year 1), Scale &amp; Peak Integration (Year 2), and Steady-State Optimization (Year 3).</li>
+      <li>Resourcing peaks in Year 2, reflecting the parallel execution of data, evaluation, and integration workstreams.</li>
+      <li>Strategic and architectural roles are retained onshore (US); execution and support roles are located offshore (India), under onshore supervision.</li>
+      <li>Total investment across the three years is approximately $1.23M, reflecting a fixed 15% gross margin for this engagement.</li>
+    </ul>
+
+    <div class="pager">
+      <button onclick="goTo('s3')">&larr; Previous</button>
+      <button disabled>End of briefing</button>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function goTo(id) {
+    document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('nav li').forEach(function(li){
+      li.classList.toggle('active', li.getAttribute('data-target') === id);
+    });
+    window.scrollTo({top:0, behavior:'auto'});
+  }
+  document.querySelectorAll('nav li').forEach(function(li){
+    li.addEventListener('click', function(){ goTo(li.getAttribute('data-target')); });
+  });
+</script>
+
+</body>
+</html>
